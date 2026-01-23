@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
+import { API_ENDPOINTS, STORAGE_URL } from '../config';
 
 interface GalleryImage {
   id: string | number;
@@ -27,14 +28,14 @@ export default function Gallery() {
   const loadImages = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://www.adminsb.tutelagestudy.com/api/gallery');
+      const response = await fetch(API_ENDPOINTS.GALLERY);
       const data = await response.json();
 
       if (data && data.data && Array.isArray(data.data)) {
         // Map API response to expected format
         const formattedImages = data.data.map((item: ApiGalleryItem) => ({
           id: item.id,
-          url: `https://www.adminsb.tutelagestudy.com/storage/${item.image_path}`,
+          url: `${STORAGE_URL}/${item.image_path}`,
           title: item.alt_text || 'Gallery Image',
           description: item.shortnote || ''
         }));

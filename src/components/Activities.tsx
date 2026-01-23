@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Calendar, MapPin, Tag, RefreshCw } from 'lucide-react';
+import { API_ENDPOINTS } from '../config';
 
 interface ApiCategory {
   id: number;
@@ -42,11 +43,12 @@ export default function Activities() {
     // Auto-refresh every 10 seconds
     const interval = setInterval(loadActivities, 10000);
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCategory]);
 
   const loadCategories = async () => {
     try {
-      const response = await fetch('https://www.adminsb.tutelagestudy.com/api/activity-categories');
+      const response = await fetch(API_ENDPOINTS.ACTIVITY_CATEGORIES);
       const data = await response.json();
 
       if (data && data.data && Array.isArray(data.data)) {
@@ -60,10 +62,10 @@ export default function Activities() {
   const loadActivities = async () => {
     setLoading(true);
     try {
-      let url = 'https://www.adminsb.tutelagestudy.com/api/activities';
+      let url = API_ENDPOINTS.ACTIVITIES;
 
       if (selectedCategory !== 'all') {
-        url = `https://www.adminsb.tutelagestudy.com/api/activities/${selectedCategory}`;
+        url = `${API_ENDPOINTS.ACTIVITIES}/${selectedCategory}`;
       }
 
       const response = await fetch(url);

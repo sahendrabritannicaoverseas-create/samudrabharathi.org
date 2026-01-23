@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Play } from 'lucide-react';
+import { API_ENDPOINTS } from '../config';
 
 interface ApiVideo {
   id: number;
@@ -26,7 +27,7 @@ export default function Videos() {
   const loadVideos = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://www.adminsb.tutelagestudy.com/api/videos');
+      const response = await fetch(API_ENDPOINTS.VIDEOS);
       const data = await response.json();
 
       if (data && data.data && Array.isArray(data.data)) {

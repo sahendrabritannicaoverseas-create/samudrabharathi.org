@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section id="home" className="relative pt-28 pb-16 bg-gradient-to-br from-orange-50 via-white to-blue-50">
+    <section id="home" className="relative pt-28 lg:pt-48 pb-16 bg-gradient-to-br from-orange-50 via-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-red-600 to-blue-600 mb-6">

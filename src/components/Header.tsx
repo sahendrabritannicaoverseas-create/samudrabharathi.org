@@ -57,6 +57,9 @@ export default function Header() {
           <button onClick={() => scrollToSection('activities')} className="text-gray-700 hover:text-orange-600 font-medium transition">
             Activities
           </button>
+          <button onClick={() => scrollToSection('events')} className="text-gray-700 hover:text-orange-600 font-medium transition">
+            Events
+          </button>
           <button onClick={() => scrollToSection('gallery')} className="text-gray-700 hover:text-orange-600 font-medium transition">
             Gallery
           </button>
@@ -78,6 +81,9 @@ export default function Header() {
             </button>
             <button onClick={() => scrollToSection('activities')} className="block w-full text-left text-gray-700 hover:text-orange-600 font-medium transition py-2">
               Activities
+            </button>
+            <button onClick={() => scrollToSection('events')} className="block w-full text-left text-gray-700 hover:text-orange-600 font-medium transition py-2">
+              Events
             </button>
             <button onClick={() => scrollToSection('gallery')} className="block w-full text-left text-gray-700 hover:text-orange-600 font-medium transition py-2">
               Gallery

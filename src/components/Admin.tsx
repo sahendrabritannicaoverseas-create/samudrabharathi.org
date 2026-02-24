@@ -133,11 +133,10 @@ export default function Admin() {
           <div className="flex">
             <button
               onClick={() => setActiveTab('events')}
-              className={`flex-1 py-4 px-6 font-semibold transition flex items-center justify-center gap-2 ${
-                activeTab === 'events'
-                  ? 'bg-orange-50 text-orange-600 border-b-2 border-orange-600'
-                  : 'text-gray-600 hover:bg-gray-50'
-              }`}
+              className={`flex-1 py-4 px-6 font-semibold transition flex items-center justify-center gap-2 ${activeTab === 'events'
+                ? 'bg-orange-50 text-orange-600 border-b-2 border-orange-600'
+                : 'text-gray-600 hover:bg-gray-50'
+                }`}
             >
               <Calendar size={20} />
               Add Event
@@ -147,11 +146,10 @@ export default function Admin() {
                 setActiveTab('images');
                 setMediaForm(prev => ({ ...prev, type: 'image' }));
               }}
-              className={`flex-1 py-4 px-6 font-semibold transition flex items-center justify-center gap-2 ${
-                activeTab === 'images'
-                  ? 'bg-orange-50 text-orange-600 border-b-2 border-orange-600'
-                  : 'text-gray-600 hover:bg-gray-50'
-              }`}
+              className={`flex-1 py-4 px-6 font-semibold transition flex items-center justify-center gap-2 ${activeTab === 'images'
+                ? 'bg-orange-50 text-orange-600 border-b-2 border-orange-600'
+                : 'text-gray-600 hover:bg-gray-50'
+                }`}
             >
               <Image size={20} />
               Add Image
@@ -161,11 +159,10 @@ export default function Admin() {
                 setActiveTab('videos');
                 setMediaForm(prev => ({ ...prev, type: 'video' }));
               }}
-              className={`flex-1 py-4 px-6 font-semibold transition flex items-center justify-center gap-2 ${
-                activeTab === 'videos'
-                  ? 'bg-orange-50 text-orange-600 border-b-2 border-orange-600'
-                  : 'text-gray-600 hover:bg-gray-50'
-              }`}
+              className={`flex-1 py-4 px-6 font-semibold transition flex items-center justify-center gap-2 ${activeTab === 'videos'
+                ? 'bg-orange-50 text-orange-600 border-b-2 border-orange-600'
+                : 'text-gray-600 hover:bg-gray-50'
+                }`}
             >
               <Video size={20} />
               Add Video

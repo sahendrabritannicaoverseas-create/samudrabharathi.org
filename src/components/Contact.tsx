@@ -17,7 +17,7 @@ export default function Contact() {
               <Mail size={32} />
             </div>
             <h3 className="font-bold mb-2">Email</h3>
-            <p className="text-gray-300 text-sm">info@samudrabharthitn.org</p>
+            <p className="text-gray-300 text-sm">samudrabharathitn@gmail.com</p>
           </div>
 
           <div className="text-center">
@@ -25,7 +25,7 @@ export default function Contact() {
               <Phone size={32} />
             </div>
             <h3 className="font-bold mb-2">Phone</h3>
-            <p className="text-gray-300 text-sm">+91 XXX XXX XXXX</p>
+            <p className="text-gray-300 text-sm">+91 9080325436</p>
           </div>
 
           <div className="text-center">
@@ -33,7 +33,7 @@ export default function Contact() {
               <MapPin size={32} />
             </div>
             <h3 className="font-bold mb-2">Location</h3>
-            <p className="text-gray-300 text-sm">Tamil Nadu, India</p>
+            <p className="text-gray-300 text-sm">23/1, Santhai Thoppu, Marakkanan, Viluppuram </p>
           </div>
 
           <div className="text-center">

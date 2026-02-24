@@ -33,12 +33,28 @@ export default function Gallery() {
 
       if (data && data.data && Array.isArray(data.data)) {
         // Map API response to expected format
-        const formattedImages = data.data.map((item: ApiGalleryItem) => ({
-          id: item.id,
-          url: `${STORAGE_URL}/${item.image_path}`,
-          title: item.alt_text || 'Gallery Image',
-          description: item.shortnote || ''
-        }));
+        const formattedImages = data.data.map((item: ApiGalleryItem) => {
+          let imageUrl = '';
+          const path = item.image_path;
+
+          if (path) {
+            if (path.startsWith('http')) {
+              imageUrl = path;
+            } else {
+              const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+              imageUrl = `${STORAGE_URL}/${cleanPath}`;
+            }
+          } else {
+            imageUrl = '/activity_demo.png'; // Fallback for gallery
+          }
+
+          return {
+            id: item.id,
+            url: imageUrl,
+            title: item.alt_text || 'Gallery Image',
+            description: item.shortnote || ''
+          };
+        });
         setImages(formattedImages);
       }
     } catch (error) {

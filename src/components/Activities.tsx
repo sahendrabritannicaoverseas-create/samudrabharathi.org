@@ -113,10 +113,10 @@ export default function Activities() {
     <section id="activities" className="py-16 bg-gradient-to-br from-orange-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-red-600 to-blue-600 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-red-600 to-blue-600 mb-4">
             Our Activities
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base text-gray-600 max-w-3xl mx-auto">
             Explore our diverse range of cultural programs and social initiatives.
           </p>
         </div>
@@ -171,7 +171,7 @@ export default function Activities() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-800 mb-1 line-clamp-2">{activity.title}</h3>
+                  <h3 className="text-lg font-bold text-gray-800 mb-1 line-clamp-2">{activity.title}</h3>
                   {activity.activityName && activity.activityName !== activity.title && (
                     <p className="text-sm font-medium text-orange-600 mb-3">{activity.activityName}</p>
                   )}

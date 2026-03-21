@@ -3,13 +3,20 @@ export default function Hero() {
     <section id="home" className="relative pt-28 lg:pt-48 pb-16 bg-gradient-to-br from-orange-50 via-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-red-600 to-blue-600 mb-6">
-            Welcome to Samudra Bharathi
-          </h2>
-          <p className="text-xl sm:text-2xl text-gray-700 font-semibold mb-4">
-            Tamil Nadu Arakattalai (Trust)
+
+          <p className="text-base sm:text-lg md:text-xl font-medium text-orange-600 mb-2 font-sanskrit">
+            Ram Ram
           </p>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold text-orange-600 mb-2 font-sanskrit leading-relaxed">
+            -कामये दुःखतप्तानां प्राणिनामर्तिनाशनम्॥
+          </p>
+          <p className="text-base sm:text-lg md:text-xl font-medium text-orange-600 mb-4 font-sanskrit">
+            Ram Ram
+          </p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-red-600 to-blue-600 mb-6">
+            Samudra Bharathi Tamil Nadu
+          </h2>
+          <p className="text-base text-gray-600 max-w-3xl mx-auto mb-8">
             Dedicated to preserving and promoting Tamil culture, organizing social initiatives,
             and fostering community development through various cultural programs and competitions.
           </p>
@@ -31,15 +38,15 @@ export default function Hero() {
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition">
-            <div className="text-4xl font-bold text-orange-600 mb-2">50+</div>
+            <div className="text-3xl font-bold text-orange-600 mb-2">50+</div>
             <p className="text-gray-700 font-semibold">Events Organized</p>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition">
-            <div className="text-4xl font-bold text-red-600 mb-2">1000+</div>
+            <div className="text-3xl font-bold text-red-600 mb-2">1000+</div>
             <p className="text-gray-700 font-semibold">Participants</p>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition">
-            <div className="text-4xl font-bold text-blue-600 mb-2">10+</div>
+            <div className="text-3xl font-bold text-blue-600 mb-2">10+</div>
             <p className="text-gray-700 font-semibold">Social Initiatives</p>
           </div>
         </div>

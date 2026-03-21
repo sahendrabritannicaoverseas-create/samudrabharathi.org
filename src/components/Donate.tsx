@@ -64,20 +64,52 @@ export default function Donate() {
       <section className="py-10 -mt-10 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            
-          
+            {/* Left Content: Impact Programs */}
+            <div className="lg:col-span-7 space-y-8">
+              <div className="mb-10">
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-2">Our Impact Programs</h2>
+                <div className="w-20 h-1.5 bg-gradient-to-r from-[#EE2A24] to-[#92278f] rounded-full"></div>
+              </div>
 
-            {/* Aligned to the right, Form narrowed for better focus (6 cols) */}
-            <div className="hidden lg:block lg:col-span-6"></div>
+              <div className="space-y-6">
+                <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-[#EE2A24] transform transition-all hover:shadow-md">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">DRISHTI (Education)</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    We educate children and adults on life skills, health, hygiene, and personal well-being to build a strong foundation for their future.
+                  </p>
+                </div>
+
+                <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-orange-500 transform transition-all hover:shadow-md">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">SUKHAD (Menstrual Hygiene)</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    We provide menstrual health awareness and distribute hygiene kits to ensure dignity and health for women across communities.
+                  </p>
+                </div>
+
+                <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-red-500 transform transition-all hover:shadow-md">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Sashakti (Skill Development)</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    We create employment opportunities ensuring financial stability, self-reliance, and sustainable livelihoods.
+                  </p>
+                </div>
+
+                <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-blue-600 transform transition-all hover:shadow-md">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Healthcare & Legal Aid</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    We provide medical support, legal aid, and essential resources including comprehensive elderly care and legal guidance for those in need.
+                  </p>
+                </div>
+              </div>
+            </div>
             
             <div className="lg:col-span-5">
               <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
                 <div className="p-4 sm:p-4">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center sm:text-left">Donate & Create Impact</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-3 text-center sm:text-left">Donate & Create Impact</h2>
                   
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {/* Citizenship Selector */}
-                    <div className="space-y-4">
+                    <div className="space-y-2">
                       <label className="text-sm font-bold text-gray-500 flex items-center gap-1">
                         Citizenship <span className="text-red-500">*</span>
                       </label>
@@ -90,26 +122,26 @@ export default function Donate() {
                             checked={citizenship === 'indian'}
                             onChange={() => setCitizenship('indian')}
                           />
-                          <span className={`text-lg font-medium ${citizenship === 'indian' ? 'text-gray-900' : 'text-gray-500'}`}>Indian Citizen</span>
+                          <span className={`text-base font-medium ${citizenship === 'indian' ? 'text-gray-900' : 'text-gray-500'}`}>Indian Citizen</span>
                         </label>
-                        <label className="flex items-center gap-3 cursor-pointer group">
+                        <label className="flex items-center gap-2 cursor-pointer group">
                           <input 
                             type="radio" 
                             name="citizenship" 
-                            className="w-5 h-5 text-orange-600 border-gray-300 focus:ring-orange-500 cursor-pointer"
+                            className="w-4 h-4 text-orange-600 border-gray-300 focus:ring-orange-500 cursor-pointer"
                             checked={citizenship === 'nri'}
                             onChange={() => setCitizenship('nri')}
                           />
-                          <span className={`text-lg font-medium ${citizenship === 'nri' ? 'text-gray-900' : 'text-gray-500'}`}>Foreign/NRI</span>
+                          <span className={`text-base font-medium ${citizenship === 'nri' ? 'text-gray-900' : 'text-gray-500'}`}>Foreign/NRI</span>
                         </label>
-                      </div>
                     </div>
-
+                    </div>
+                    
                     {/* Give Once / Give Monthly Toggle */}
-                    <div className="p-1 bg-gray-100 rounded-full flex max-w-md mx-auto sm:mx-0">
+                    <div className="p-1 bg-gray-100 rounded-full flex max-w-sm mx-auto sm:mx-0">
                       <button 
                         onClick={() => setFrequency('once')}
-                        className={`flex-1 py-3 px-6 rounded-full font-bold text-sm transition-all duration-300 ${
+                        className={`flex-1 py-2 px-4 rounded-full font-bold text-xs transition-all duration-300 ${
                           frequency === 'once' 
                             ? 'bg-orange-500 text-white shadow-sm' 
                             : 'text-gray-500 hover:text-gray-700'
@@ -119,7 +151,7 @@ export default function Donate() {
                       </button>
                       <button 
                         onClick={() => setFrequency('monthly')}
-                        className={`flex-1 py-3 px-6 rounded-full font-bold text-sm transition-all duration-300 ${
+                        className={`flex-1 py-2 px-4 rounded-full font-bold text-xs transition-all duration-300 ${
                           frequency === 'monthly' 
                             ? 'bg-orange-500 text-white shadow-sm' 
                             : 'text-gray-500 hover:text-gray-700'
@@ -130,13 +162,13 @@ export default function Donate() {
                     </div>
 
                     {/* Cause Selection */}
-                    <div className="space-y-4">
-                      <label className="text-sm font-bold text-gray-700">Select a Cause</label>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-gray-700">Select a Cause</label>
                       <div className="relative">
                         <select 
                           value={selectedCause}
                           onChange={(e) => setSelectedCause(e.target.value)}
-                          className="w-full bg-white border border-gray-200 rounded-xl px-4 py-4 text-gray-800 font-medium focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none appearance-none shadow-sm cursor-pointer"
+                          className="w-full bg-white border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 font-medium focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none appearance-none shadow-sm cursor-pointer"
                         >
                           <option>General Donation</option>
                           <option>Cultural Preservation Fund</option>
@@ -144,22 +176,22 @@ export default function Donate() {
                           <option>Education Support Project</option>
                         </select>
                         <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                          <ArrowRight size={18} className="transform rotate-90" />
+                          <ArrowRight size={16} className="transform rotate-90" />
                         </div>
                       </div>
                     </div>
 
                     {/* Amount Selection */}
-                    <div className="space-y-4">
-                      <label className="text-sm font-bold text-gray-700">Choose an amount to donate (₹)</label>
-                      <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-3">
+                      <label className="text-xs font-bold text-gray-700">Choose an amount to donate (₹)</label>
+                      <div className="grid grid-cols-2 gap-3">
                         {presetAmounts.map((amount) => (
                           <button
                             key={amount}
                             onClick={() => handleAmountClick(amount)}
-                            className={`py-4 px-6 rounded-xl font-bold text-xl border-2 transition-all duration-200 flex items-center justify-center gap-1 ${
+                            className={`py-3 px-4 rounded-xl font-bold text-lg border-2 transition-all duration-200 flex items-center justify-center gap-1 ${
                               selectedAmount === amount 
-                                ? 'border-orange-500 bg-orange-50 text-orange-700 shadow-md transform scale-[1.02]' 
+                                ? 'border-orange-500 bg-orange-50 text-orange-700 shadow-sm transform scale-[1.01]' 
                                 : 'border-gray-100 bg-white text-gray-600 hover:border-orange-200 hover:bg-gray-50'
                             }`}
                           >
@@ -170,13 +202,13 @@ export default function Donate() {
                       
                       {/* Other Amount Input */}
                       <div className="relative group">
-                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-800 font-bold text-lg group-focus-within:text-orange-600 transition-colors">₹</div>
+                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-800 font-bold text-base group-focus-within:text-orange-600 transition-colors">₹</div>
                         <input 
                           type="number" 
                           placeholder="Enter Other Amount"
                           value={customAmount}
                           onChange={handleCustomAmountChange}
-                          className="w-full pl-10 pr-4 py-4 bg-white border-2 border-gray-100 rounded-xl text-lg font-bold text-gray-800 placeholder:text-gray-400 focus:border-orange-600 outline-none transition-all shadow-sm focus:shadow-md"
+                          className="w-full pl-10 pr-4 py-3 bg-white border-2 border-gray-100 rounded-xl text-base font-bold text-gray-800 placeholder:text-gray-400 focus:border-orange-600 outline-none transition-all shadow-sm focus:shadow-md"
                         />
                       </div>
                     </div>
@@ -190,8 +222,8 @@ export default function Donate() {
                     </div>
 
                     {/* Submit Button */}
-                    <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-5 rounded-2xl font-bold text-xl shadow-lg hover:shadow-xl transform transition hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-3">
-                      <Heart className="fill-white" size={24} />
+                    <button className="w-full bg-gradient-to-r from-[#EE2A24] to-[#92278f] hover:opacity-90 text-white py-4 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transform transition hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-3">
+                      <Heart className="fill-white" size={20} />
                       Donate Now
                     </button>
                   </div>

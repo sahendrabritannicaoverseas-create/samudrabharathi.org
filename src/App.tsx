@@ -11,6 +11,7 @@ import Videos from './components/Videos';
 import Contact from './components/Contact';
 import Admin from './components/Admin';
 import Donate from './components/Donate';
+import { WeatherDashboard } from './components/WeatherDashboard';
 
 const HomePage = () => (
   <>
@@ -20,6 +21,7 @@ const HomePage = () => (
     <Events />
     <Gallery />
     <Videos />
+    <WeatherDashboard />
     <Contact />
   </>
 );
@@ -50,8 +52,9 @@ function App() {
           <Route path="/events" element={<EventsPage />} />
           <Route path="/activity/:id" element={<ActivityPage />} />
           <Route path="/event/:id" element={<ActivityPage />} />
+          <Route path="/weather" element={<div className="pt-20 bg-slate-950 min-h-screen"><WeatherDashboard /><Contact /></div>} />
           <Route path="/admin" element={<Admin />} />
-          <Route path="/donate" element={<Donate />} />
+          <Route path="/donate" element={<><Donate /><Contact /></>} />
         </Routes>
       </div>
     </Router>

@@ -1,4 +1,4 @@
-import { Calendar, MapPin, ArrowLeft, Tag, Share2, Send, Heart } from 'lucide-react';
+import { Calendar, MapPin, ArrowLeft, Tag, Share2, Heart, MessageCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface ActivityDetailProps {
@@ -58,7 +58,6 @@ export default function ActivityDetail({ activity, onBack, isEvent }: ActivityDe
 
     // Determine theme colors based on type
     const bgGradient = isEvent ? 'from-blue-50 via-white to-orange-50' : 'from-orange-50 via-white to-blue-50';
-    const accentHover = isEvent ? 'blue-700' : 'orange-700';
     const accentLight = isEvent ? 'blue-100' : 'orange-100';
     const accentText = isEvent ? 'text-blue-600' : 'text-orange-600';
     const accentBg = isEvent ? 'bg-blue-600' : 'bg-orange-600';
@@ -168,26 +167,26 @@ export default function ActivityDetail({ activity, onBack, isEvent }: ActivityDe
                             </div>
 
                             {/* Call to Action */}
-                            <div className="mt-8 pt-6 border-t border-gray-100 gap-3 flex flex-col">
-                                <button 
-                                    onClick={() => navigate('/donate')}
-                                    className={`w-full ${accentBg} hover:${accentHover} text-white py-3.5 rounded-xl font-bold text-lg flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-[0.98] transition-all`}
-                                >
-                                    <Heart size={20} className="fill-white" />
-                                    Donate Now
-                                </button>
+                            <div className="mt-8 pt-6 border-t border-gray-100 gap-2.5 flex flex-col">
                                 <button 
                                     onClick={handleWhatsAppContact}
-                                    className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white py-3 rounded-xl font-bold text-lg flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-[0.98] transition-all"
+                                    className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white py-2.5 rounded-xl font-bold text-base flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-[0.98] transition-all"
                                 >
-                                    <Send size={20} className="fill-white" />
+                                    <MessageCircle size={18} />
                                     Contact on WhatsApp
                                 </button>
                                 <button 
-                                    onClick={handleShareEvent}
-                                    className="w-full border-2 border-gray-100 text-gray-700 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-gray-50 hover:border-gray-200 transition-all"
+                                    onClick={() => navigate('/donate')}
+                                    className="w-full border-2 border-orange-100 text-orange-600 bg-orange-50/50 hover:bg-orange-50 py-2.5 rounded-xl font-bold text-base flex items-center justify-center gap-2 transition-all"
                                 >
-                                    <Share2 size={20} />
+                                    <Heart size={18} className="fill-orange-600" />
+                                    Donate Now
+                                </button>
+                                <button 
+                                    onClick={handleShareEvent}
+                                    className="w-full border-2 border-gray-100 text-gray-700 py-2.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-gray-50 hover:border-gray-200 transition-all"
+                                >
+                                    <Share2 size={18} />
                                     Share {isEvent ? 'Event' : 'Activity'}
                                 </button>
                             </div>

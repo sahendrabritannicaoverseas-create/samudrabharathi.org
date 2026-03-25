@@ -21,7 +21,6 @@ const HomePage = () => (
     <Events />
     <Gallery />
     <Videos />
-    <WeatherDashboard />
     <Contact />
   </>
 );

@@ -4,15 +4,10 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
 
-          <p className="text-base sm:text-lg md:text-xl font-medium text-orange-600 mb-2 font-sanskrit">
-            Ram Ram
-          </p>
           <p className="text-xl sm:text-2xl md:text-3xl font-bold text-orange-600 mb-2 font-sanskrit leading-relaxed">
             -कामये दुःखतप्तानां प्राणिनामर्तिनाशनम्॥
           </p>
-          <p className="text-base sm:text-lg md:text-xl font-medium text-orange-600 mb-4 font-sanskrit">
-            Ram Ram
-          </p>
+          
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-red-600 to-blue-600 mb-6">
             Samudra Bharathi Tamil Nadu
           </h2>

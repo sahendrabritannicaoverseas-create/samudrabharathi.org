@@ -1,12 +1,36 @@
-export interface WeatherData {
-  state: string;
-  district: string;
-  city?: string;
-  temperature?: number;
-  rainfall?: number;
+export interface ForecastDay {
+  date: string;
+  temp: number;
   condition: string;
-  lastUpdated: string;
+}
+
+export interface WeatherAlert {
+  event: string;
+  headline: string;
+  description: string;
+  severity: string;
+  urgency: string;
+  instruction?: string;
+}
+
+export interface WeatherData {
   id: string;
+  district: string;
+  state: string;
+  temperature: number;
+  feelsLike?: number;
+  condition: string;
+  humidity: number;
+  pressure?: number;
+  visibility?: number;
+  windSpeed: number;
+  lastUpdated: string;
+  isCoastal: boolean;
+  waveHeight?: number;
+  rainfall?: number;
+  isLive?: boolean;
+  forecast?: ForecastDay[];
+  alerts?: WeatherAlert[];
 }
 
 export interface ApiResponse {

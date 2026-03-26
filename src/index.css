@@ -12,3 +12,8 @@ html {
     scroll-padding-top: 160px;
   }
 }
+
+/* Hide scrollbar but keep scroll */
+.overflow-y-auto::-webkit-scrollbar {
+  display: none;
+}

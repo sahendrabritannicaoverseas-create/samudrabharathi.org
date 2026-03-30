@@ -4,16 +4,21 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
 
-          <p className="text-xl sm:text-2xl md:text-3xl font-bold text-orange-600 mb-2 font-sanskrit leading-relaxed">
-            -कामये दुःखतप्तानां प्राणिनामर्तिनाशनम्॥
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-red-600 to-blue-600 mb-4">
+            Welcome to Samudra Bharathi
+          </h1>
+          
+          <p className="text-lg sm:text-xl font-semibold text-gray-700 mb-2">
+            Preserving Bharatiya heritage • Building Strong Communities • Empowering Society
+          </p>
+
+          <p className="text-xl italic text-orange-600 mb-6 font-medium">
+            "Dharma, Unity, and Service for a Better Tomorrow"
           </p>
           
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-red-600 to-blue-600 mb-6">
-            Samudra Bharathi Tamil Nadu
-          </h2>
-          <p className="text-base text-gray-600 max-w-3xl mx-auto mb-8">
-            Dedicated to preserving and promoting Tamil culture, organizing social initiatives,
-            and fostering community development through various cultural programs and competitions.
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+            We are dedicated to nurturing Bharatiya culture, strengthening communities, and empowering individuals 
+            through meaningful programs, cultural initiatives, and social service.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <button

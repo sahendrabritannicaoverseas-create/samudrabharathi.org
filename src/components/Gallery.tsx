@@ -71,7 +71,7 @@ export default function Gallery() {
             Photo Gallery
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Capturing moments from our events and activities
+            Photos of events, activities, celebrations, camps, and various community initiatives.
           </p>
         </div>
 

@@ -11,7 +11,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           <div className="text-center">
             <div className="bg-orange-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
               <Mail size={32} />
@@ -33,7 +33,7 @@ export default function Contact() {
               <MapPin size={32} />
             </div>
             <h3 className="font-bold mb-2">Location</h3>
-            <p className="text-gray-300 text-sm">23/1, Santhai Thoppu, Marakkanan, Viluppuram </p>
+            <p className="text-gray-300 text-sm text-balance">23/1, Santhai Thoppu, Marakkanan, Viluppuram </p>
           </div>
 
           <div className="text-center">
@@ -55,13 +55,42 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 pt-8 text-center">
-          <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Samudra Bharathi Tamil Nadu Arakattalai. All rights reserved.
-          </p>
-          <p className="text-gray-500 text-xs mt-2">
-            Dedicated to preserving Tamil culture and fostering community development
-          </p>
+        {/* Get Involved Section */}
+        <div className="bg-white/5 rounded-3xl p-8 mb-16 border border-white/10">
+          <h3 className="text-2xl font-bold mb-8 text-center">Get Involved</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: 'Volunteer with us', desc: 'Join our team of dedicated volunteers.' },
+              { title: 'Participate in programs', desc: 'Join our cultural and social events.' },
+              { title: 'Support our initiatives', desc: 'Contribute to our ongoing projects.' },
+              { title: 'Partner with us', desc: 'Collaborate for social impact.' }
+            ].map((item, index) => (
+              <div key={index} className="bg-white/10 p-6 rounded-2xl hover:bg-white/20 transition cursor-pointer group border border-white/5">
+                <p className="font-bold text-orange-400 group-hover:text-orange-300 mb-2">{item.title}</p>
+                <p className="text-sm text-gray-400">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="border-t border-gray-700 pt-12">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
+            <div className="text-center md:text-left">
+              <h3 className="text-xl font-bold text-white mb-2">Samudra Bharathi</h3>
+              <p className="text-gray-400 text-sm">Dharma, Unity, and Service for a Better Tomorrow</p>
+            </div>
+            <nav className="flex flex-wrap justify-center gap-6 text-sm font-semibold">
+              <button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-orange-400 transition">About</button>
+              <button onClick={() => document.getElementById('activities')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-orange-400 transition">Activities</button>
+              <button onClick={() => document.getElementById('activities')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-orange-400 transition">Services</button>
+              <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-orange-400 transition">Contact</button>
+            </nav>
+          </div>
+          <div className="pt-8 border-t border-gray-800 text-center">
+            <p className="text-gray-500 text-sm">
+              &copy; {new Date().getFullYear()} Samudra Bharathi Tamil Nadu Arakattalai. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </section>

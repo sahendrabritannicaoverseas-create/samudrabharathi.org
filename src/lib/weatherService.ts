@@ -2,8 +2,8 @@ import axios from 'axios';
 import type { WeatherData, WeatherAlert } from '../types/weather';
 import { OPENWEATHER_CONFIG, WEATHERAPI_CONFIG } from '../config';
 
-const CACHE_KEY = 'weather_data_cache';
-const COASTAL_CACHE_KEY = 'coastal_weather_cache';
+const CACHE_KEY = 'weather_data_cache_v2';
+const COASTAL_CACHE_KEY = 'coastal_weather_cache_v2';
 const CACHE_TIMEOUT = 15 * 60 * 1000; // 15 minutes
 
 /**
@@ -153,17 +153,6 @@ export const fetchMarineData = async (lat: number, lon: number): Promise<{ waveH
  */
 export const fetchWeatherAPIAlerts = async (lat: number, lon: number): Promise<WeatherAlert[]> => {
   if (!WEATHERAPI_CONFIG.API_KEY || WEATHERAPI_CONFIG.API_KEY.includes('PLACEHOLDER')) {
-    // Generate mock alert for Coastal or specific regions
-    if (lat < 14 && Math.random() > 0.7) {
-      return [{
-        event: "Coastal Flood Advisory",
-        headline: "Significant coastal flooding expected",
-        description: "Coastal districts are advised to monitor tide levels. High waves and surface inundation are expected during peak hours.",
-        severity: "Moderate",
-        urgency: "Expected",
-        instruction: "Secure loose equipment at harbors. Avoid coastal roads during high tide."
-      }];
-    }
     return [];
   }
 
@@ -179,10 +168,13 @@ export const fetchWeatherAPIAlerts = async (lat: number, lon: number): Promise<W
     });
 
     const alerts = response.data.alerts?.alert || [];
+    
+
+
     return alerts.map((a: any) => ({
       event: a.event,
       headline: a.headline,
-      description: a.desc, // WeatherAPI uses 'desc'
+      description: a.desc || a.description, // WeatherAPI uses 'desc'
       severity: a.severity,
       urgency: a.urgency,
       instruction: a.instruction

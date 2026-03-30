@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { API_ENDPOINTS, STORAGE_URL } from '../config';
 
 interface Activity {
-  id: number;
+  id: string | number;
   title: string;
   activityName: string;
   description: string;
@@ -14,9 +14,8 @@ interface Activity {
   image: string;
 }
 
-
 interface Category {
-  id: number | 'all';
+  id: string | number | 'all';
   category_name: string;
 }
 
@@ -28,7 +27,7 @@ export default function Activities() {
   const navigate = useNavigate();
   const [activities, setActivities] = useState<Activity[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
-  const [selectedCategoryId, setSelectedCategoryId] = useState<number | 'all'>('all');
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string | number | 'all'>('all');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -65,10 +64,8 @@ export default function Activities() {
       if (data && data.data && Array.isArray(data.data)) {
         const formattedActivities = data.data.map((item: any) => {
           const title = item.activity_name || item.title || item.name || '';
-
           let imageUrl = '';
           const path = item.thumbnail_path || item.image_path || item.image;
-
           if (path) {
             if (path.startsWith('http')) {
               imageUrl = path;
@@ -107,6 +104,17 @@ export default function Activities() {
   const handleActivityClick = (activity: any) => {
     const slug = activity.slug || activity.activity_slug || (activity.activityName || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
     navigate(`/activity/${slug}`);
+  };
+
+  const formatDate = (dateStr: string) => {
+    if (!dateStr) return 'Date TBD';
+    if (isNaN(Date.parse(dateStr))) return dateStr;
+    
+    return new Date(dateStr).toLocaleDateString('en-IN', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
   };
 
   return (
@@ -180,11 +188,7 @@ export default function Activities() {
                   <div className="mt-auto pt-4 border-t border-gray-100 space-y-2">
                     <div className="flex items-center text-sm text-gray-500">
                       <Calendar size={16} className="mr-2 text-orange-500" />
-                      {activity.activityDate ? new Date(activity.activityDate).toLocaleDateString('en-IN', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                      }) : 'Date TBD'}
+                      {formatDate(activity.activityDate)}
                     </div>
                     <div className="flex items-center text-sm text-gray-500">
                       <MapPin size={16} className="mr-2 text-orange-500" />

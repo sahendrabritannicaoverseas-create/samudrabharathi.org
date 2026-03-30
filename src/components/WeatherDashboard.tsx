@@ -314,17 +314,7 @@ const DetailModal: React.FC<DetailModalProps> = ({ data, onClose }) => {
             </div>
           )}
 
-          <div className="bg-gradient-to-br from-blue-600/10 to-indigo-600/10 border border-blue-500/20 p-8 rounded-[2rem]">
-            <h4 className="text-white font-bold mb-3 flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-              Maritime & Flight Safety Status
-            </h4>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              Conditions in <span className="text-white font-bold">{data.district}</span> are currently <span className="text-white font-bold">{data.condition.toLowerCase()}</span>. 
-              {data.windSpeed > 25 ? " High wind speeds detected—exercise caution for small vessels." : " Wind patterns are stable for standard maritime activities."}
-              {data.isCoastal && data.waveHeight && data.waveHeight > 1.5 ? " Surface waves are significant—monitor harbor advisories." : " Wave height is within safe operational limits."}
-            </p>
-          </div>
+
         </div>
       </div>
     </div>
